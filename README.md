@@ -75,7 +75,7 @@
             ListPrice="{m:Exp Str=$\{kbusers.f_stair1price\}|\{kbfee.f_zhinajin\}}"
             ListPriceKind="1|1"
             />
-  </pre></code>
+  </code></pre>
 
 
 5. 注意事项
