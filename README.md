@@ -57,10 +57,9 @@
     xmlns:tax="clr-namespace:Com.Aote.GoldenTax;assembly=GoldenTax"
     </code></pre>
 
-  -在 ResourceLoad 区域添加金税对象
-      <pre><code>
+  - 在 ResourceLoad 区域添加金税对象
+    <pre><code>
       <oo:GoldTax Name="tax"
-            TaxIP="金税盘ip端口，由金税提供"
             ListGoodsName="气费|滞纳金"
             InfoClientName="{m:Exp Str=kbusers.f_username\=&gt;Completed}"
             IsInit="{m:Exp Str=single[data.name\=\=$使用金税盘分公司$].ToObjectList().First().value.IndexOf(LoginUser.f_fengongsi) > -1}"
@@ -79,8 +78,6 @@
   </pre></code>
 
 
-  注意，金税对象需要单例，方式没想好
-
 5. 注意事项
-  - 金税客户端程序必须由系统打开，如先打开金税，再界面打开金税时会提示失败，提示：独占使用
-          
+  - 金税客户端程序必须由系统打开，如先打开金税，再界面打开金税时会提示失败，
+    提示：独占使用
