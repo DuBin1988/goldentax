@@ -59,7 +59,7 @@
 
   - 在 ResourceLoad 区域添加金税对象
     <pre><code>
-    <tax:GoldTax Name="tax"
+    tax:GoldTax Name="tax"
     ListGoodsName="气费|滞纳金"
     InfoClientName="{m:Exp Str=kbusers.f_username\=&gt;Completed}"
     IsInit="{m:Exp Str=single[data.name\=\=$使用金税盘分公司$].ToObjectList().First().value.IndexOf(LoginUser.f_fengongsi) > -1}"
