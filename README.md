@@ -59,24 +59,22 @@
 
   - 在 ResourceLoad 区域添加金税对象
     <pre><code>
-      <oo:GoldTax Name="tax"
-            ListGoodsName="气费|滞纳金"
-            InfoClientName="{m:Exp Str=kbusers.f_username\=&gt;Completed}"
-            IsInit="{m:Exp Str=single[data.name\=\=$使用金税盘分公司$].ToObjectList().First().value.IndexOf(LoginUser.f_fengongsi) > -1}"
-            InfoClientAddressPhone="{m:Exp Str=kbusers.f_address\=&gt;Completed}"
-            InfoTaxRate="{m:Exp Str=single[data.name\=\=$\{LoginUser.f_fengongsi\}税率$].ToObjectList().First().value.ToInt()}"
-            InfoSellerBankAccount="{m:Exp Str=single[data.name\=\=$\{LoginUser.f_fengongsi\}开户银行及帐号$].ToObjectList().First().value.ToString()}"
-            InfoSellerAddressPhone="{m:Exp Str=single[data.name\=\=$\{LoginUser.f_fengongsi\}地址及电话$].ToObjectList().First().value.ToString()}"
-            InfoCashier="{m:Exp Str=LoginUser.name}"
-            InfoChecker="{m:Exp Str=LoginUser.name}"
-            ListUnit="方|次"
-            InfoNotes="{m:Exp Str=$用户编号：\{kbusers.f_userid\} 交易编号:\{retsell.id\}上期余额:\{kbfee.f_zhye\}本期余额:\{kbfee.f_benqizhye\}上期指数:\{kbfee.lastinputgasnum\}本期指数:\{kbfee.lastrecord\} 抄表月份:\{kbfee.lastinputdate.ToString($yyyy-MM$)\}-\{kbfee.endinputdate.ToString($yyyy-MM$)\} 抄表员:\{kbusers.f_inputtor\}}"
-            ListNumber="{m:Exp Str=$\{kbfee.f_pregas\}|1}"
-            ListPrice="{m:Exp Str=$\{kbusers.f_stair1price\}|\{kbfee.f_zhinajin\}}"
-            ListPriceKind="1|1"
-            />
+    <tax:GoldTax Name="tax"
+    ListGoodsName="气费|滞纳金"
+    InfoClientName="{m:Exp Str=kbusers.f_username\=&gt;Completed}"
+    IsInit="{m:Exp Str=single[data.name\=\=$使用金税盘分公司$].ToObjectList().First().value.IndexOf(LoginUser.f_fengongsi) > -1}"
+    InfoClientAddressPhone="{m:Exp Str=kbusers.f_address\=&gt;Completed}"
+    InfoTaxRate="{m:Exp Str=single[data.name\=\=$\{LoginUser.f_fengongsi\}税率$].ToObjectList().First().value.ToInt()}"
+    InfoSellerBankAccount="{m:Exp Str=single[data.name\=\=$\{LoginUser.f_fengongsi\}开户银行及帐号$].ToObjectList().First().value.ToString()}"
+    InfoSellerAddressPhone="{m:Exp Str=single[data.name\=\=$\{LoginUser.f_fengongsi\}地址及电话$].ToObjectList().First().value.ToString()}"
+    InfoCashier="{m:Exp Str=LoginUser.name}"
+    InfoChecker="{m:Exp Str=LoginUser.name}"
+    ListUnit="方|次"
+    InfoNotes="{m:Exp Str=$用户编号：\{kbusers.f_userid\}}"
+    ListNumber="{m:Exp Str=$\{kbfee.f_pregas\}|1}"
+    ListPrice="{m:Exp Str=$\{kbusers.f_stair1price\}|\{kbfee.f_zhinajin\}}"
+    ListPriceKind="1|1"   />
   </code></pre>
-
 
 5. 注意事项
   - 金税客户端程序必须由系统打开，如先打开金税，再界面打开金税时会提示失败，
